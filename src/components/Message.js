@@ -1,18 +1,22 @@
 import React from 'react';
 
-const Message = ({ message, pseudo, isUser }) => {
+const Message = ({ message, pseudo, isUser, time }) => {
     if (isUser(pseudo)) {
-    return (
-        <p className="user-message">
-            {message}
-        </p>
-    )
+        return (
+            <div className="user-message">
+                le {time}
+                <p>
+                    {message}
+                </p>
+            </div>
+        )
     }
     else {
         return (
-            <p className="not-user-message">
-           <strong>{pseudo} :</strong> {message}
-        </p>
+            <div className="not-user-message">
+                <strong> {pseudo} </strong>le {time}
+                <p> {message}</p>
+            </div>
         )
     }
 }

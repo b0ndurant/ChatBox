@@ -2,6 +2,8 @@ import React, { Component, createRef } from 'react'
 
 import Formulaire from './components/Formulaire';
 import Message from './components/Message'
+import moment from 'moment'
+import 'moment/locale/fr'
 import './App.css'
 import './Animation.css'
 
@@ -57,6 +59,7 @@ class App extends Component {
           key={key}
           >
           <Message
+            time={moment().format('Do/MM/YY à hh:mm:ss')}
             isUser={this.isUser}
             message={this.state.messages[key].message}
             pseudo={this.state.messages[key].pseudo}
